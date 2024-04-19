@@ -31,12 +31,10 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | Networking CIDR block to be used for the VPC | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Project Name to be use to name resources | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | Region to aws | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all AWS resources | `map(any)` | n/a | yes |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_ca"></a> [ca](#output\_ca) | n/a |
-| <a name="output_endpoint"></a> [endpoint](#output\_endpoint) | n/a |
-| <a name="output_oidc"></a> [oidc](#output\_oidc) | n/a |
+No outputs.
 <!-- END_TF_DOCS -->
