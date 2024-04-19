@@ -7,3 +7,8 @@ variable "project_name" {
   type        = string
   description = "Project Name to be use to name resources"
 }
+
+variable "demo" {
+  type        = string
+  description = "demo demo"
+}
