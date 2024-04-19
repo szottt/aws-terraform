@@ -1,6 +1,5 @@
 resource "aws_eip" "eks_ngw_eip_1a" {
   domain = "vpc"
-
   tags = merge(
     var.tags,
     {
@@ -11,7 +10,6 @@ resource "aws_eip" "eks_ngw_eip_1a" {
 
 resource "aws_eip" "eks_ngw_eip_1b" {
   domain = "vpc"
-
   tags = merge(
     var.tags,
     {
@@ -44,7 +42,7 @@ resource "aws_nat_gateway" "eks_ngw_1b" {
   )
 }
 
-resource "aws_route_table" "eks_privat_rout_table_1a" {
+resource "aws_route_table" "eks_private_route_table_1a" {
   vpc_id = aws_vpc.eks_vpc.id
 
   route {
@@ -55,12 +53,12 @@ resource "aws_route_table" "eks_privat_rout_table_1a" {
   tags = merge(
     var.tags,
     {
-      Name = "${var.project-name}-priv-rout-table-1a"
+      Name = "${var.project-name}-priv-route-table-1a"
     }
   )
 }
 
-resource "aws_route_table" "eks_privat_rout_table_1b" {
+resource "aws_route_table" "eks_private_route_table_1b" {
   vpc_id = aws_vpc.eks_vpc.id
 
   route {
@@ -71,7 +69,7 @@ resource "aws_route_table" "eks_privat_rout_table_1b" {
   tags = merge(
     var.tags,
     {
-      Name = "${var.project-name}-priv-rout-table-1b"
+      Name = "${var.project-name}-priv-route-table-1b"
     }
   )
 }

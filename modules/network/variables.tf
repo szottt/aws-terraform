@@ -5,9 +5,10 @@ variable "cidr_block" {
 
 variable "project-name" {
   type        = string
-  description = "Project Name to be use to name resources"
+  description = "Project name to be used to name the resources (Name tag)"
 }
+
 variable "tags" {
   type        = map(any)
-  description = "Tags to be added to AWS Resources"
+  description = "Tags to be added to AWS resources"
 }

@@ -3,7 +3,7 @@ variable "cidr_block" {
   description = "Networking CIDR block to be used for the VPC"
 }
 
-variable "project-name" {
+variable "project_name" {
   type        = string
   description = "Project Name to be use to name resources"
 }

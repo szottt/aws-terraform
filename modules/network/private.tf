@@ -6,7 +6,7 @@ resource "aws_subnet" "eks_subnet_private_1a" {
   tags = merge(
     var.tags,
     {
-      Name                              = "${var.project-name}-priv-subnet-1a"
+      Name                              = "${var.project-name}-priv-subnet-1a",
       "kubernetes.io/role/internal-elb" = 1
     }
   )
@@ -20,22 +20,18 @@ resource "aws_subnet" "eks_subnet_private_1b" {
   tags = merge(
     var.tags,
     {
-      Name                              = "${var.project-name}-priv-subnet-1b"
+      Name                              = "${var.project-name}-priv-subnet-1b",
       "kubernetes.io/role/internal-elb" = 1
     }
   )
 }
 
-#"10.0.0.0/16"
-#"10.0.1.0/24"
-#"10.0.2.0/24"
-
 resource "aws_route_table_association" "eks_rtb_assoc_priv_1a" {
   subnet_id      = aws_subnet.eks_subnet_private_1a.id
-  route_table_id = aws_route_table.eks_public_rout_table.id
+  route_table_id = aws_route_table.eks_private_route_table_1a.id
 }
 
 resource "aws_route_table_association" "eks_rtb_assoc_priv_1b" {
   subnet_id      = aws_subnet.eks_subnet_private_1b.id
-  route_table_id = aws_route_table.eks_public_rout_table.id
+  route_table_id = aws_route_table.eks_private_route_table_1b.id
 }
