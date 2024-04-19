@@ -1,14 +1,5 @@
-resource "aws_iam_policy" "eks-controller-policy" {
-  name        = "${var.project-name}-aws-load-balancer-controller"
-
-  # Terraform's "jsonencode" function converts a
-  # Terraform expression result to valid JSON syntax.
+resource "aws_iam_policy" "eks_controller_policy" {
+  name   = "${var.project-name}-aws-load-balancer-controller"
   policy = file("${path.module}/iam_policy.json")
-  tags = merge(
-    var.tags,
-    {
-      Name = "${var.project_name}-policy"
-    }
-  )
-}
+  tags   = var.tags
 }
